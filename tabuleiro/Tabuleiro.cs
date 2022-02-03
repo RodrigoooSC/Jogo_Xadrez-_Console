@@ -17,10 +17,43 @@
         {
             return pecas[linha, coluna];
         }
-        public void colocarPeca(Peca p, Posicao pos)
+
+        public Peca peca(Posicao pos)
         {
+            return pecas[pos.linha, pos.coluna];
+        }
+
+        public bool existePeca(Posicao pos) //Verifica se a peca existe
+        {
+            validarPosicao(pos);
+            return peca(pos) != null;
+        }
+
+        public void colocarPeca(Peca p, Posicao pos) // Inseri a peça aonde não tiver 
+        {
+            if (existePeca(pos))
+            {
+                throw new TabuleiroException("Já existe uma peça na posição!");
+            }
+
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
+        }
+
+        public bool posicaoValida(Posicao pos) // Verifica se as peças estão no quadrante 8x8 (0-7/0-7)
+        {
+            if(pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
+            {
+                return false;
+            }
+            return true;
+        }
+        public void validarPosicao(Posicao pos) // Lança uma exceção caso a posição não seja válida
+        {
+            if (!posicaoValida(pos))
+            {
+                throw new TabuleiroException("Posição inválida!");
+            }
         }
     }
 }

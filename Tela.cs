@@ -5,7 +5,7 @@ namespace Jogo_Xadrez___Console
 {
     class Tela
     {
-        public static void imprimirTabuleiro(Tabuleiro tab)
+        public static void imprimirTabuleiro(Tabuleiro tab) // Monta na tela o tabuleiro com as peças
         {
             for (int i = 0; i <tab.linhas; i++)
             {
