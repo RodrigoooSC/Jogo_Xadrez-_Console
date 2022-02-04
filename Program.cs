@@ -11,15 +11,21 @@ namespace Jogo_Xadrez___Console
         {
             try // Quando for detectada alguma exceção dentro do bloco try ele interrompe o código e cai no catch exibindo o erro
             {
-                Tabuleiro tab = new Tabuleiro(8, 8); // Intancia um tabuleiro 8x8
+                PartidaDeXadrez partida = new PartidaDeXadrez();
+                while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab); // Imprimi o tabuleiro no console
 
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 2));
+                    Console.WriteLine("=============================");
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(3, 5));
-
-                Tela.imprimirTabuleiro(tab); // Imprimi o tabuleiro no console
+                    partida.executaMovimento(origem, destino);
+                }
+                
             }
             catch (TabuleiroException e)
             {
