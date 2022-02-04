@@ -9,7 +9,7 @@ namespace Jogo_Xadrez___Console
     {
         static void Main(string[] args)
         {
-            try // Quando for detectada alguma exceção dentro do bloco try ele interrompe o código e cai no catch exibindo o erro
+            /*try // Quando for detectada alguma exceção dentro do bloco try ele interrompe o código e cai no catch exibindo o erro
             {
                 Tabuleiro tab = new Tabuleiro(8, 8); // Intancia um tabuleiro 8x8
 
@@ -23,6 +23,10 @@ namespace Jogo_Xadrez___Console
             {
                 Console.WriteLine(e.Message);
             }
+            Console.ReadLine();*/
+
+            PosicaoXadrez pos = new PosicaoXadrez('a', 1);
+            Console.WriteLine(pos.toPosicao());
             Console.ReadLine();
         }
     }
