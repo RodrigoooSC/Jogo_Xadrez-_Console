@@ -14,19 +14,40 @@ namespace Jogo_Xadrez___Console
                 Console.Write(8 - i + " "); // Colocar numeração lateral do tabuleiro
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    if (tab.peca(i, j) == null)
-                    {
-                        Console.Write("- ");
-                    }
-                    else
-                    {
-                        imprimirPeca(tab.peca(i, j)); // Metodo de imprimir as peças coloridas
-                        Console.Write(" ");
-                    }
+                    imprimirPeca(tab.peca(i, j)); // Metodo de imprimir as peças coloridas                    
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h ");
+        }
+
+        public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis) // Monta na tela o tabuleiro com as possiveis posições da peça
+        {
+            ConsoleColor fundoOriginal = Console.BackgroundColor;
+            ConsoleColor fundoMarcado = ConsoleColor.DarkGray;
+
+            for (int i = 0; i < tab.linhas; i++)
+            {
+                Console.Write(8 - i + " ");
+                for (int j = 0; j < tab.colunas; j++)
+                {
+                    if (posicoesPossiveis[i, j] == true)
+                    {
+                        Console.BackgroundColor = fundoMarcado;
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = fundoOriginal;
+                    }
+
+                    imprimirPeca(tab.peca(i, j));
+                    Console.BackgroundColor = fundoOriginal;
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("  a b c d e f g h ");
+            Console.BackgroundColor = fundoOriginal;
+
         }
 
         public static PosicaoXadrez lerPosicaoXadrez()
@@ -38,21 +59,24 @@ namespace Jogo_Xadrez___Console
         }
         public static void imprimirPeca(Peca peca) // Preenchimento de cor das peças do tabuleiro
         {
-            if (peca.cor == Cor.Branca) // Peças Brancas
+            if (peca == null)
             {
-                Console.Write(peca);
-
-                /*ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(peca);
-                Console.ForegroundColor = aux;*/
+                Console.Write("- ");
             }
-            else // Peças Pretas
+            else
             {
-                ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write(peca);
-                Console.ForegroundColor = aux;
+                if (peca.cor == Cor.Branca) // Peças Brancas
+                {
+                    Console.Write(peca);
+                }
+                else // Peças Pretas
+                {
+                    ConsoleColor aux = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write(peca);
+                    Console.ForegroundColor = aux;
+                }
+                Console.Write(" ");
             }
         }
     }
