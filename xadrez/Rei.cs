@@ -23,7 +23,7 @@ namespace xadrez
 
         private bool testeTorreParaRoque(Posicao pos)
         {
-            /* A metodo e executado se uma peça não for nula;
+            /* O metodo e executado se uma peça não for nula;
              * A peça e uma instância da torre;
              * A cor da peça deve ser da mesma cor do rei; e
              * A quantidade de movimentos dessa peca tem que ser zero. */
@@ -86,7 +86,7 @@ namespace xadrez
                 mat[pos.linha, pos.coluna] = true;
             }
 
-            // #Jogada Especial Roque 
+            // #Jogada especial roque 
             if (qntdMovimentos == 0 && !partida.xeque) // Se não tiver em xeque e não tiver se movimentado
             {
                 // Roque pequeno
