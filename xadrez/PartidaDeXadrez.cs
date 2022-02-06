@@ -56,12 +56,12 @@ namespace xadrez
                 tab.colocarPeca(T, destinoTorre);
             }
             // #Jogada especial en passant
-            if(p is Peao)
+            if (p is Peao)
             {
-                if(origem.coluna != destino.coluna && pecaCapturada == null)
+                if (origem.coluna != destino.coluna && pecaCapturada == null)
                 {
                     Posicao posicaoPeaoCapturado;
-                    if(p.cor == Cor.Branca)
+                    if (p.cor == Cor.Branca)
                     {
                         posicaoPeaoCapturado = new Posicao(destino.linha + 1, destino.coluna);
                     }
@@ -108,13 +108,13 @@ namespace xadrez
                 tab.colocarPeca(T, origemTorre);
             }
             // #Jogada especial en passant
-            if( p is Peao)
+            if (p is Peao)
             {
-                if(origem.coluna != destino.coluna && pecaCapturada == vulneravelEnPassant)
+                if (origem.coluna != destino.coluna && pecaCapturada == vulneravelEnPassant)
                 {
                     Peca peaoCapturado = tab.retirarPeca(destino);
                     Posicao posicaoPeao;
-                    if(p.cor == Cor.Branca)
+                    if (p.cor == Cor.Branca)
                     {
                         posicaoPeao = new Posicao(3, destino.coluna);
                     }
@@ -136,6 +136,21 @@ namespace xadrez
                 throw new TabuleiroException("Você não pode se colocar em xeque!");
             }
 
+            Peca p = tab.peca(destino);
+
+            // #Jogada especial promoção
+            if (p is Peao)
+            {
+                if ((p.cor == Cor.Branca && destino.linha == 0) || p.cor == Cor.Preta && destino.linha == 7)
+                {
+                    p = tab.retirarPeca(destino);
+                    pecas.Remove(p);
+                    Peca dama = new Dama(tab, p.cor);
+                    tab.colocarPeca(dama, destino);
+                    pecas.Add(dama);
+                }
+            }
+
             if (estaEmXeque(adversario(jogadorAtual)))
             {
                 xeque = true;
@@ -153,9 +168,6 @@ namespace xadrez
                 turno++;
                 mudaJogador();
             }
-
-            Peca p = tab.peca(destino);
-
             //#Jogada especial en passant
             // Se a peça escolhida foi um peão e andou 2 casa a frente, ela fica vulneravel a jogada en passant
 
