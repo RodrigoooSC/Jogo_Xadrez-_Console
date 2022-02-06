@@ -45,7 +45,9 @@ namespace Jogo_Xadrez___Console
                         Console.WriteLine("ATENÇÃO - " + e.Message);
                         Console.ReadLine();                    
                     }
-                }                
+                }
+                Console.Clear();
+                Tela.ImprimirPartida(partida);
             }
             catch (TabuleiroException e)
             {
