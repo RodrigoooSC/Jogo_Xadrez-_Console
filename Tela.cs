@@ -7,8 +7,24 @@ namespace Jogo_Xadrez___Console
 {
     class Tela
     {
+        public static void inicioJogo(PartidaDeXadrez partida)
+        {
+            ConsoleColor corTitle = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("  ===================== ");
+            Console.WriteLine(" ||BEM-VINDO JOGADORES|| ");
+            Console.WriteLine("  ===================== ");
+            Console.ForegroundColor = corTitle;
+            Console.WriteLine();
+            Console.Write("Nome Jogador(Branca): ");
+            string jogador1 = Console.ReadLine();
+            Console.Write("Nome Jogador(Preta): ");
+            string jogador2 = Console.ReadLine();
+        }
+
         public static void ImprimirPartida(PartidaDeXadrez partida)
         {
+
             Console.WriteLine();
             imprimirTabuleiro(partida.tab); // Imprimi o tabuleiro no console
 
@@ -19,28 +35,29 @@ namespace Jogo_Xadrez___Console
             Console.WriteLine("# Turno: " + partida.turno);
             if (!partida.terminada)
             {
-                Console.WriteLine("# Aguardando jogada: " + partida.jogadorAtual);
+                Console.WriteLine("# Aguardando jogada: " + "(" + partida.jogadorAtual + ")");
+
                 if (partida.xeque)
                 {
-                    Console.WriteLine("XEQUE!");
+                    Console.WriteLine(" -- XEQUE! --");
                 }
             }
             else
             {
-                Console.WriteLine("XEQUEMATE!");
-                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+                Console.WriteLine(" -- XEQUEMATE! --");
+                Console.WriteLine("# Vencedor: " + partida.jogadorAtual);
                 Console.ReadLine();
             }
         }
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
-            Console.WriteLine("Peças capturadas ");
-            Console.Write("Brancas: ");
+            Console.WriteLine("# Peças capturadas ");
+            Console.Write("# Brancas: ");
             imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
             Console.WriteLine();
-            
-            Console.Write("Pretas: ");
+
+            Console.Write("# Pretas: ");
             ConsoleColor aux = Console.ForegroundColor; // Cor original
             Console.ForegroundColor = ConsoleColor.Blue;
             imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
@@ -51,10 +68,10 @@ namespace Jogo_Xadrez___Console
         public static void imprimirConjunto(HashSet<Peca> conjunto)
         {
             Console.Write("[ ");
-            foreach(Peca x in conjunto)
+            foreach (Peca x in conjunto)
             {
                 Console.Write(x + " ");
-                
+
             }
             Console.Write(" ]");
         }

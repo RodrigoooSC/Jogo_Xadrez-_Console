@@ -11,14 +11,16 @@ namespace Jogo_Xadrez___Console
         {
             try // Quando for detectada alguma exceção dentro do bloco try ele interrompe o código e cai no catch exibindo o erro
             {
+                Console.Title = "Jogo de Xadrez - Rodrigo Silva";
                 PartidaDeXadrez partida = new PartidaDeXadrez();
+                Tela.inicioJogo(partida);
+
                 while (!partida.terminada)
                 {
                     try
                     {
                         Console.Clear();
                         Tela.ImprimirPartida(partida);
-                        
 
                         // Origem
                         Console.WriteLine();
@@ -39,23 +41,24 @@ namespace Jogo_Xadrez___Console
 
                         partida.realizaJogada(origem, destino);
                     }
-                    catch(TabuleiroException e)
+                    catch (TabuleiroException e)
                     {
                         Console.WriteLine();
                         Console.WriteLine("ATENÇÃO - " + e.Message);
-                        Console.ReadLine();                    
+                        Console.ReadLine();
                     }
                 }
                 Console.Clear();
                 Tela.ImprimirPartida(partida);
             }
-            catch (TabuleiroException e)
+            catch (Exception e)
             {
                 Console.WriteLine();
                 Console.WriteLine(e.Message);
                 Console.ReadLine();
             }
             
+
         }
     }
 }

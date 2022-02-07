@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using tabuleiro;
 
 namespace xadrez
@@ -73,8 +74,6 @@ namespace xadrez
                     capturadas.Add(pecaCapturada);
                 }
             }
-
-
             return pecaCapturada;
         }
 
@@ -145,12 +144,41 @@ namespace xadrez
                 {
                     p = tab.retirarPeca(destino);
                     pecas.Remove(p);
-                    Peca dama = new Dama(tab, p.cor);
-                    tab.colocarPeca(dama, destino);
-                    pecas.Add(dama);
+                    Console.WriteLine();
+                    Console.WriteLine("# PROMOÇÃO #");
+                    Console.WriteLine(" Dama[D] - Torre[T] - Bispo[B] - Cavalo[C]");
+                    Console.Write("Digite o caractere da opção escolhida: ");
+                    char escolha = char.Parse(Console.ReadLine());
+
+                    switch (escolha)
+                    {
+                        //DAMA
+                        case 'D':
+                            Peca dama = new Dama(tab, p.cor);
+                            tab.colocarPeca(dama, destino);
+                            pecas.Add(dama);
+                            break;
+                        //TORRE
+                        case 'T':
+                            Peca torre = new Torre(tab, p.cor);
+                            tab.colocarPeca(torre, destino);
+                            pecas.Add(torre);
+                            break;
+                        //BISPO
+                        case 'B':
+                            Peca bispo = new Bispo(tab, p.cor);
+                            tab.colocarPeca(bispo, destino);
+                            pecas.Add(bispo);
+                            break;
+                        //CAVALO
+                        case 'C':
+                            Peca cavalo = new Cavalo(tab, p.cor);
+                            tab.colocarPeca(cavalo, destino);
+                            pecas.Add(cavalo);
+                            break;
+                    }
                 }
             }
-
             if (estaEmXeque(adversario(jogadorAtual)))
             {
                 xeque = true;
@@ -210,10 +238,12 @@ namespace xadrez
             if (jogadorAtual == Cor.Branca)
             {
                 jogadorAtual = Cor.Preta;
+                //nomeJogador = jogador2;
             }
             else
             {
                 jogadorAtual = Cor.Branca;
+                //nomeJogador = jogador1;
             }
         }
 
@@ -255,6 +285,7 @@ namespace xadrez
                 return Cor.Branca;
             }
         }
+
 
         private Peca rei(Cor cor) // retorna o rei adversário
         {
@@ -343,7 +374,6 @@ namespace xadrez
             colocarNovaPeca('g', 2, new Peao(tab, Cor.Branca, this));
             colocarNovaPeca('h', 2, new Peao(tab, Cor.Branca, this));
 
-
             //Peças pretas
             colocarNovaPeca('a', 8, new Torre(tab, Cor.Preta));
             colocarNovaPeca('b', 8, new Cavalo(tab, Cor.Preta));
@@ -361,12 +391,6 @@ namespace xadrez
             colocarNovaPeca('f', 7, new Peao(tab, Cor.Preta, this));
             colocarNovaPeca('g', 7, new Peao(tab, Cor.Preta, this));
             colocarNovaPeca('h', 7, new Peao(tab, Cor.Preta, this));
-
         }
-
-
-
-
-
     }
 }
