@@ -11,20 +11,20 @@ namespace Jogo_Xadrez___Console
         {
             ConsoleColor corTitle = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("  ===================== ");
-            Console.WriteLine(" ||BEM-VINDO JOGADORES|| ");
-            Console.WriteLine("  ===================== ");
+            Console.WriteLine("  ====================== ");
+            Console.WriteLine(" ||BEM-VINDOS JOGADORES|| ");
+            Console.WriteLine("  ====================== ");
             Console.ForegroundColor = corTitle;
             Console.WriteLine();
-            Console.Write("Nome Jogador(Branca): ");
-            string jogador1 = Console.ReadLine();
-            Console.Write("Nome Jogador(Preta): ");
-            string jogador2 = Console.ReadLine();
+            Console.Write("Nome jogador(Branca): ");
+            string player1 = Console.ReadLine();
+            Console.Write("Nome jogador(Preta): ");
+            string player2 = Console.ReadLine();
+            partida.jogadores(player1, player2);            
         }
 
         public static void ImprimirPartida(PartidaDeXadrez partida)
         {
-
             Console.WriteLine();
             imprimirTabuleiro(partida.tab); // Imprimi o tabuleiro no console
 
@@ -35,7 +35,7 @@ namespace Jogo_Xadrez___Console
             Console.WriteLine("# Turno: " + partida.turno);
             if (!partida.terminada)
             {
-                Console.WriteLine("# Aguardando jogada: " + "(" + partida.jogadorAtual + ")");
+                Console.WriteLine("# Aguardando jogada: " + partida.nomeJogador + " (" + partida.jogadorAtual + ")");
 
                 if (partida.xeque)
                 {
@@ -45,7 +45,7 @@ namespace Jogo_Xadrez___Console
             else
             {
                 Console.WriteLine(" -- XEQUEMATE! --");
-                Console.WriteLine("# Vencedor: " + partida.jogadorAtual);
+                Console.WriteLine("# Vencedor: " + partida.nomeJogador + " (" + partida.jogadorAtual + ")");
                 Console.ReadLine();
             }
         }

@@ -15,11 +15,16 @@ namespace xadrez
         public bool xeque { get; private set; }
         public Peca vulneravelEnPassant { get; private set; }
 
+        public string nomeJogador { get; private set; }
+        public string jogador1 { get; private set; }
+        public string jogador2 { get; private set; }
+
+
         public PartidaDeXadrez()
         {
             tab = new Tabuleiro(8, 8);
             turno = 1;
-            jogadorAtual = Cor.Branca;
+            jogadorAtual = Cor.Branca;            
             terminada = false;
             xeque = false;
             vulneravelEnPassant = null;
@@ -27,7 +32,7 @@ namespace xadrez
             capturadas = new HashSet<Peca>();
             colocarPecas();
         }
-
+        
         public Peca executaMovimento(Posicao origem, Posicao destino)
         {
             Peca p = tab.retirarPeca(origem);
@@ -145,9 +150,9 @@ namespace xadrez
                     p = tab.retirarPeca(destino);
                     pecas.Remove(p);
                     Console.WriteLine();
-                    Console.WriteLine("# PROMOÇÃO #");
+                    Console.WriteLine("# PROMOÇÃO");
                     Console.WriteLine(" Dama[D] - Torre[T] - Bispo[B] - Cavalo[C]");
-                    Console.Write("Digite o caractere da opção escolhida: ");
+                    Console.Write("Digite o caractere escolhido: ");
                     char escolha = char.Parse(Console.ReadLine());
 
                     switch (escolha)
@@ -233,17 +238,24 @@ namespace xadrez
             }
         }
 
+        public void jogadores(string jog1, string jog2)
+        {
+            jogador1 = jog1;
+            jogador2 = jog2;
+            nomeJogador = jogador1;
+        }
+
         private void mudaJogador()
         {
             if (jogadorAtual == Cor.Branca)
             {
                 jogadorAtual = Cor.Preta;
-                //nomeJogador = jogador2;
+                nomeJogador = jogador2;
             }
             else
             {
                 jogadorAtual = Cor.Branca;
-                //nomeJogador = jogador1;
+                nomeJogador = jogador1;
             }
         }
 
