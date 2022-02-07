@@ -16,9 +16,9 @@ namespace Jogo_Xadrez___Console
             Console.WriteLine("  ====================== ");
             Console.ForegroundColor = corTitle;
             Console.WriteLine();
-            Console.Write("Nome jogador(Branca): ");
+            Console.Write("Nome do jogador(Branca): ");
             string player1 = Console.ReadLine();
-            Console.Write("Nome jogador(Preta): ");
+            Console.Write("Nome do jogador(Preta): ");
             string player2 = Console.ReadLine();
             partida.jogadores(player1, player2);            
         }
@@ -44,7 +44,10 @@ namespace Jogo_Xadrez___Console
             }
             else
             {
+                ConsoleColor corTitle = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(" -- XEQUEMATE! --");
+                Console.ForegroundColor = corTitle;
                 Console.WriteLine("# Vencedor: " + partida.nomeJogador + " (" + partida.jogadorAtual + ")");
                 Console.ReadLine();
             }
