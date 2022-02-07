@@ -19,7 +19,6 @@ namespace xadrez
         public string jogador1 { get; private set; }
         public string jogador2 { get; private set; }
 
-
         public PartidaDeXadrez()
         {
             tab = new Tabuleiro(8, 8);
@@ -150,32 +149,32 @@ namespace xadrez
                     p = tab.retirarPeca(destino);
                     pecas.Remove(p);
                     Console.WriteLine();
-                    Console.WriteLine("# PROMOÇÃO");
+                    Console.WriteLine("# Promoção");
                     Console.WriteLine(" Dama[D] - Torre[T] - Bispo[B] - Cavalo[C]");
                     Console.Write("Digite o caractere escolhido: ");
                     char escolha = char.Parse(Console.ReadLine());
 
                     switch (escolha)
                     {
-                        //DAMA
+                        //Dama
                         case 'D':
                             Peca dama = new Dama(tab, p.cor);
                             tab.colocarPeca(dama, destino);
                             pecas.Add(dama);
                             break;
-                        //TORRE
+                        //Torre
                         case 'T':
                             Peca torre = new Torre(tab, p.cor);
                             tab.colocarPeca(torre, destino);
                             pecas.Add(torre);
                             break;
-                        //BISPO
+                        //Bispo
                         case 'B':
                             Peca bispo = new Bispo(tab, p.cor);
                             tab.colocarPeca(bispo, destino);
                             pecas.Add(bispo);
                             break;
-                        //CAVALO
+                        //Cavalo
                         case 'C':
                             Peca cavalo = new Cavalo(tab, p.cor);
                             tab.colocarPeca(cavalo, destino);

@@ -7,7 +7,7 @@ namespace Jogo_Xadrez___Console
 {
     class Tela
     {
-        public static void inicioJogo(PartidaDeXadrez partida)
+        public static void inicioJogo(PartidaDeXadrez partida) // Imprimi inicio do jogo e solicita o nome dos jogadores
         {
             ConsoleColor corTitle = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
