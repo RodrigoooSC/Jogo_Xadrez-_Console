@@ -10,6 +10,11 @@ atráves da IDE do Visual Studio 2019.</p>
 <p>O tabuleiro e dividio em  8 linhas(8-1) e 8 colunas(a-h).O jogador escolhe por meio das posições válidas qual jogada ele vai realizar e existem tratamentos de excessões
 evitando que o sistema pare sua execução durante ou entre as jogadas caso ocorra alguma jogada irregular.</p>
 <p>O projeto possui as jogadas especiais comumentes de um jogo de xadrez como o roque grande/pequeno, en passant e promoção.</p>
+<div align="center">
+  <img src="https://github.com/RodrigoooSC/Jogo_Xadrez_Console/blob/3f35ddd6df17f8abe2a1141f983180c1d9c74de3/img/Tela_Inicio.png" width="900px" /> 
+  <img src="https://github.com/RodrigoooSC/Jogo_Xadrez_Console/blob/3f35ddd6df17f8abe2a1141f983180c1d9c74de3/img/Tela_Jogador_1.png" width="900px" />
+  <img src="https://github.com/RodrigoooSC/Jogo_Xadrez_Console/blob/3f35ddd6df17f8abe2a1141f983180c1d9c74de3/img/Tela_Jogador_2.png" width="900px" />
+</div>
 <hr/>
 <h3># Tecnologias utilizadas</h3>
 <div>
