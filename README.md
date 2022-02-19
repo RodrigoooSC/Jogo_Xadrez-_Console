@@ -7,7 +7,7 @@ tem como objetivo praticar os conhecimentos adquiridos durante as aulas do curso
 atráves da IDE do Visual Studio 2019.</p>
 <hr/>
 <h3># Sobre o jogo</h3>
-<p>O tabuleiro e dividio em  8 linhas(8-1) e 8 colunas(a-h).O jogador escolhe por meio das posições válidas qual jogada ele vai realizar e existem tratamentos de excessões
+<p>O tabuleiro e dividio em  8 linhas(1-8) e 8 colunas(a-h).O jogador escolhe por meio do teclado as posições válidas para efetuar a jogada e existem tratamentos de excessões
 evitando que o sistema pare sua execução durante ou entre as jogadas caso ocorra alguma jogada irregular.</p>
 <p>O projeto possui as jogadas especiais comumentes de um jogo de xadrez como o roque grande/pequeno, en passant e promoção.</p>
 <div align="center">
