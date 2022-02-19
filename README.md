@@ -17,6 +17,5 @@ evitando que o sistema pare sua execução durante ou entre as jogadas caso ocor
 <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white" />
 <img src="https://img.shields.io/badge/Git-E34F26?style=for-the-badge&logo=git&logoColor=white" />
 <img src="https://img.shields.io/badge/Windows-017AD7?style=for-the-badge&logo=windows&logoColor=white" />
-<img src="https://img.shields.io/badge/Windows-017AD7?style=for-the-badge&logo=visualstudio&logoColor=white" />
 </div>
 <hr/>
