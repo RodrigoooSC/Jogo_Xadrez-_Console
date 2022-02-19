@@ -4,7 +4,7 @@ Projeto desenvolvido no curso de C# do <a href="https://www.linkedin.com/in/neli
 <h3># Sobre o projeto 🗂</h3>
 <p> Este projeto utiliza os princípios de programação orientada a objetos emulando um jogo de xadrez no modo console e 
 tem como objetivo praticar os conhecimentos adquiridos durante as aulas do curso de C#, utilizando as diversas ferramentas que a linguagem oferece,
-atráves da IDE do <a href="https://visualstudio.microsoft.com/pt-br/vs/community/">Visual Studio 2019</a>.</p>
+atráves da IDE <a href="https://visualstudio.microsoft.com/pt-br/vs/community/">Visual Studio 2019</a>.</p>
 <hr/>
 <h3># Sobre o jogo 🕹</h3>
 <p>O tabuleiro e dividio em  8 linhas(1-8) e 8 colunas(a-h).O jogador escolhe por meio do teclado as posições válidas para efetuar a jogada e existem tratamentos de excessões
