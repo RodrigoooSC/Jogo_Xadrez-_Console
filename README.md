@@ -7,7 +7,7 @@ tem como objetivo praticar os conhecimentos adquiridos durante as aulas, utiliza
 através da IDE <a href="https://visualstudio.microsoft.com/pt-br/vs/community/">Visual Studio 2019</a>.</p>
 <hr/>
 <h3># Sobre o jogo 🕹</h3>
-<p>O tabuleiro é dividido em 8 linhas(1-8) e 8 colunas(a-h).O jogador escolhe por meio do teclado as posições válidas para efetuar as jogadas, a aplicação possui tratamentos de exceções, evitando que o sistema pare sua execução durante as jogadas caso ocorra alguma jogada irregular.</p>
+<p>O tabuleiro é dividido em 8 linhas(1-8) e 8 colunas(a-h). O jogador(a) escolhe por meio do teclado as posições válidas para efetuar as jogadas, a aplicação possui tratamentos de exceções, evitando que o sistema pare sua execução durante as jogadas caso ocorra alguma jogada irregular.</p>
 <p>O projeto possui as jogadas especiais comumente de um jogo de xadrez como o roque grande/pequeno, en passant e promoção.</p>
 <p>Para executar o jogo faça o download do arquivo - <a href="https://github.com/RodrigoooSC/Jogo_Xadrez_Console/blob/3447f6eef33fdfc99f78a40ae054fa7ea1bf0f2b/Jogo%20Xadrez%20-%20Console.exe">Jogo Xadrez-Console.exe</a> - e execute.
 <div align="center">
