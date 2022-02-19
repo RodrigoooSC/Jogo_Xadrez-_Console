@@ -10,6 +10,7 @@ atráves da IDE do <a href="https://visualstudio.microsoft.com/pt-br/vs/communit
 <p>O tabuleiro e dividio em  8 linhas(1-8) e 8 colunas(a-h).O jogador escolhe por meio do teclado as posições válidas para efetuar a jogada e existem tratamentos de excessões
 evitando que o sistema pare sua execução durante ou entre as jogadas caso ocorra alguma jogada irregular.</p>
 <p>O projeto possui as jogadas especiais comumentes de um jogo de xadrez como o roque grande/pequeno, en passant e promoção.</p>
+<p>Para executar o jogo faça o download do arquivo - <a href="https://github.com/RodrigoooSC/Jogo_Xadrez_Console/blob/3447f6eef33fdfc99f78a40ae054fa7ea1bf0f2b/Jogo%20Xadrez%20-%20Console.exe">Jogo Xadrez-Console.exe</a> - e execute.
 <div align="center">
   <img src="https://github.com/RodrigoooSC/Jogo_Xadrez_Console/blob/3f35ddd6df17f8abe2a1141f983180c1d9c74de3/img/Tela_Inicio.png" width="900px" /> 
   <img src="https://github.com/RodrigoooSC/Jogo_Xadrez_Console/blob/3f35ddd6df17f8abe2a1141f983180c1d9c74de3/img/Tela_Jogador_1.png" width="900px" />
