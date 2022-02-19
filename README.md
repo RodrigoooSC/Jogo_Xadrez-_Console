@@ -1,5 +1,5 @@
 # ♟ Jogo de Xadrez C# - Console
-Projeto desenvolvido no curso de C# do Prof. Nelio Alves
+Projeto desenvolvido no curso de C# do<a href="https://www.linkedin.com/in/nelio-alves/?originalSubdomain=br" target="_blank" rel="noreferrer noopener" > Prof. Nelio Alves</a>
 
 <h3># Sobre o projeto</h3>
 <p> Este projeto utiliza os princípios de programação orientada a objetos emulando um jogo de xadrez no modo console e 
