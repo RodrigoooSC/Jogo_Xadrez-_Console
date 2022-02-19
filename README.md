@@ -1,4 +1,4 @@
-# Jogo_Xadrez_Console
+# ♟ Jogo de Xadrez C# - Console
 Projeto desenvolvido no curso de C# do Prof. Nelio Alves
 
 <h3># Sobre o projeto</h3>
